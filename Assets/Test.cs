@@ -13,6 +13,12 @@ public class Test : MonoBehaviour {
 		for (int i = array.Length - 1; i >= 0; i--) {
 			Debug.Log (array [i]);
 		}
+		Boss Burn = new Boss();
+
+		for (int i = 0; i < 10; i++) {
+			Burn.Magic ();
+		}
+		Burn.Magic ();
 	}
 	
 	// Update is called once per frame
@@ -21,3 +27,15 @@ public class Test : MonoBehaviour {
 	}
 }
 
+public class Boss {
+	int mp = 53;
+
+	public void Magic(){
+		if (mp - 5 < 0) {
+			Debug.Log ("MPが足りないため魔法が使えない。");
+		} else {
+			mp -= 5;
+			Debug.Log ("魔法攻撃をした。残りMPは" + mp + "。");
+		}
+	}
+}
